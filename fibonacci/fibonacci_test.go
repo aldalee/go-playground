@@ -10,8 +10,6 @@ func TestFibonacci(t *testing.T) {
 	ch := fibonacci(10)
 
 	for _, want := range expected {
-		if got := <-ch; got != want {
-			assert.Equal(t, want, got)
-		}
+		assert.Equal(t, want, <-ch)
 	}
 }
